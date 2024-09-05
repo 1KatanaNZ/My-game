@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://bejkvn7l5qt0n"]
+
+[ext_resource type="Texture2D" uid="uid://den0tfbnjatyv" path="res://background/background.png" id="1_myd37"]
+[ext_resource type="Texture2D" uid="uid://ct0qtv3jxv8g5" path="res://background/middleground.png" id="2_kect6"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="background layer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(360, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="background layer"]
+position = Vector2(0, -224)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_myd37")
+centered = false
+
+[node name="Sprite2D6" type="Sprite2D" parent="background layer"]
+position = Vector2(-360, -224)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_myd37")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="background layer"]
+position = Vector2(960, -224)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_myd37")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="background layer"]
+position = Vector2(1195, -224)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_myd37")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="background layer"]
+position = Vector2(242, -224)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_myd37")
+centered = false
+
+[node name="middleground layer" type="ParallaxLayer" parent="."]
+position = Vector2(-272, -224)
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(816, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="middleground layer"]
+position = Vector2(3740, 0)
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("2_kect6")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="middleground layer"]
+position = Vector2(-136, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kect6")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="middleground layer"]
+position = Vector2(272, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kect6")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="middleground layer"]
+position = Vector2(1496, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kect6")
+centered = false
+
+[node name="Sprite2D5" type="Sprite2D" parent="middleground layer"]
+position = Vector2(1906, 0)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kect6")
+centered = false

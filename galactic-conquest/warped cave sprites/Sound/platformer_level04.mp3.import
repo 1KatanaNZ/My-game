@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxusv6wjil4hp"
+path="res://.godot/imported/platformer_level04.mp3-7341ca0e8593c93e72e365f1e18c29b9.mp3str"
+
+[deps]
+
+source_file="res://warped cave sprites/Sound/platformer_level04.mp3"
+dest_files=["res://.godot/imported/platformer_level04.mp3-7341ca0e8593c93e72e365f1e18c29b9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

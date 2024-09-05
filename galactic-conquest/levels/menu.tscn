@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvig2lessn30a"]
+
+[ext_resource type="Script" path="res://levels/menu.gd" id="1_05oa8"]
+[ext_resource type="PackedScene" uid="uid://c3umxx13kij55" path="res://levels/audio_stream_player.tscn" id="2_f4kqd"]
+[ext_resource type="AudioStream" uid="uid://cywobwxnoitja" path="res://levels/Sonic.EYX OST - Crystal Lake Zone (Extended For 20 Mins) - LteamProductions126.mp3" id="3_ddpd7"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_05oa8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -101.0
+offset_right = 80.0
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+focus_neighbor_top = NodePath("../Quit")
+text = "Start"
+
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Options"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+focus_neighbor_bottom = NodePath("../Start")
+text = "Quit"
+
+[node name="AudioStreamPlayer2" parent="." instance=ExtResource("2_f4kqd")]
+stream = ExtResource("3_ddpd7")
+volume_db = -22.555
+
+[node name="Sonic_eyxOst-CrystalLakeZone(extendedFor20Mins)-LteamProductions126" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(27, 202)
+stream = ExtResource("3_ddpd7")
+volume_db = -65.405
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

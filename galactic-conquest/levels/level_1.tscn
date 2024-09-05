@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqquk6hj37fjl"]
+
+[ext_resource type="PackedScene" uid="uid://djb8yp7ywku2n" path="res://levels/base_level.tscn" id="1_4ulij"]
+[ext_resource type="PackedScene" uid="uid://bejkvn7l5qt0n" path="res://background/parallax_background.tscn" id="2_h1d6t"]
+
+[node name="Level 1" instance=ExtResource("1_4ulij")]
+
+[node name="ParallaxBackground" parent="." index="0" instance=ExtResource("2_h1d6t")]
+offset = Vector2(0, -40)
+transform = Transform2D(1, 0, 0, 1, 0, -40)

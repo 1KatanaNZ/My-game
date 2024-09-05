@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cywobwxnoitja"
+path="res://.godot/imported/Sonic.EYX OST - Crystal Lake Zone (Extended For 20 Mins) - LteamProductions126.mp3-06b172968081cf9853e72a186d5835da.mp3str"
+
+[deps]
+
+source_file="res://levels/Sonic.EYX OST - Crystal Lake Zone (Extended For 20 Mins) - LteamProductions126.mp3"
+dest_files=["res://.godot/imported/Sonic.EYX OST - Crystal Lake Zone (Extended For 20 Mins) - LteamProductions126.mp3-06b172968081cf9853e72a186d5835da.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
