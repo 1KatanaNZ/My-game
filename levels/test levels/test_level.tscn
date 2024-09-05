@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://chinlvfif30lo"]
+[gd_scene load_steps=4 format=4 uid="uid://chinlvfif30lo"]
 
 [ext_resource type="PackedScene" uid="uid://djb8yp7ywku2n" path="res://levels/base_level.tscn" id="1_nvs4f"]
 [ext_resource type="PackedScene" uid="uid://bejkvn7l5qt0n" path="res://background/parallax_background.tscn" id="2_lblmo"]
+[ext_resource type="PackedScene" uid="uid://bkcukih5825nm" path="res://levels/enemies/goonas.tscn" id="2_rq2qn"]
 
 [node name="TestLevel" instance=ExtResource("1_nvs4f")]
 
@@ -15,3 +16,20 @@ tile_map_data = PackedByteArray("AAAAAP3/AAAPAAgAAAABAP3/AAAPAAgAAAACAP3/AAAPAAg
 
 [node name="player" parent="." index="2"]
 slide_on_ceiling = false
+
+[node name="Goonas" parent="." index="3" instance=ExtResource("2_rq2qn")]
+physics_interpolation_mode = 2
+position = Vector2(254, -85)
+floor_stop_on_slope = false
+floor_constant_speed = true
+floor_block_on_wall = false
+platform_floor_layers = 4294967041
+
+[node name="Patrol Points" type="Node2D" parent="Goonas" index="2"]
+position = Vector2(0, 2)
+
+[node name="Point 1" type="Marker2D" parent="Goonas/Patrol Points" index="0"]
+position = Vector2(-78, 0)
+
+[node name="Point 2" type="Marker2D" parent="Goonas/Patrol Points" index="1"]
+position = Vector2(83, 0)
