@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5a4fydku57w4"]
+
+[ext_resource type="Texture2D" uid="uid://dhpqgfbhrthi4" path="res://levels/enemies/shot.png" id="1_nmf81"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdk1c"]
+atlas = ExtResource("1_nmf81")
+region = Rect2(0, 0, 6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d2c1"]
+atlas = ExtResource("1_nmf81")
+region = Rect2(6, 0, 6, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3abyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdk1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d2c1")
+}],
+"loop": true,
+"name": &"shot",
+"speed": 10.0
+}]
+
+[node name="Bullet" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_3abyu")
+animation = &"shot"
+frame_progress = 0.688108

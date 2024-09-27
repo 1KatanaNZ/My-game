@@ -10,7 +10,7 @@ const JUMP: int = -300  # Adjusted jump strength
 const JUMP_HORIZONTAL: int = 100
 
 # Enum (implicitly statically typed)
-enum State {Idle, Run, Jump}
+enum State {Idle, Run, Jump, Shoot}
 
 # Dynamically typed variable
 var current_state = State.Idle
@@ -25,7 +25,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
-
+	player_shooting(delta)
 	player_run(delta)
 	player_jump(delta)
 	
@@ -59,6 +59,15 @@ func player_jump(delta: float) -> void:
 		var direction: float = Input.get_axis("move_left", "move_right")
 		velocity.x += direction * JUMP_HORIZONTAL * delta
 
+
+func player_shooting(delta : float):
+	var direction: float = Input.get_axis("move_left", "move_right")
+	
+	if direction != 0 and Input.is_action_just_pressed("shoot"):
+		current_state = State.Shoot
+
+
+
 func determine_state() -> void:
 	# Check the current state based on position
 	if is_on_floor():
@@ -69,11 +78,15 @@ func determine_state() -> void:
 	else:
 		current_state = State.Jump
 
+
+
+
 func player_animations() -> void:
-	match current_state:
-		State.Idle:
-			animated_sprite_2d.play("idle")
-		State.Run:
-			animated_sprite_2d.play("run")
-		State.Jump:
-			animated_sprite_2d.play("jump")
+	if current_state == State.Idle:
+		animated_sprite_2d.play("idle")
+	elif current_state == State.Run:
+		animated_sprite_2d.play("run")
+	elif current_state == State.Jump:
+		animated_sprite_2d.play("jump")
+	elif current_state == State.Shoot:
+		animated_sprite_2d.play("run_shoot")

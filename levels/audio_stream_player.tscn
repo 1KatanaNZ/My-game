@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3umxx13kij55"]
+
+[ext_resource type="AudioStream" uid="uid://scmbt43kiy46" path="res://levels/24 Clouds Heaven.mp3" id="1_7dcss"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_7dcss")
+autoplay = true

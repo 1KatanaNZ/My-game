@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://scmbt43kiy46"
+path="res://.godot/imported/24 Clouds Heaven.mp3-4de5d6ef2ea5b15258275cef16153f7f.mp3str"
+
+[deps]
+
+source_file="res://levels/24 Clouds Heaven.mp3"
+dest_files=["res://.godot/imported/24 Clouds Heaven.mp3-4de5d6ef2ea5b15258275cef16153f7f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

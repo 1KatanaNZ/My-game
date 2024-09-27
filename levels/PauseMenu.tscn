@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqsl2hh1piaxa"]
+
+[ext_resource type="Texture2D" uid="uid://cjo4627xyp0v4" path="res://warped cave sprites/PNG/environment/environment-preview.png" id="1_4na8a"]
+[ext_resource type="Texture2D" uid="uid://dnlfsk1dkhhq3" path="res://warped cave sprites/PNG/sprites/player/player-run/player-run-4.png" id="2_6ws42"]
+[ext_resource type="Texture2D" uid="uid://x34mti3l54lb" path="res://warped cave sprites/PNG/sprites/enemies/crab-walk/crab-walk-1.png" id="3_r6m4e"]
+[ext_resource type="Theme" uid="uid://br3ugn4xm4r8i" path="res://theme/new_theme.tres" id="4_gruau"]
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.815686, 0.290196, 0.780392, 1)
+offset_left = -236.0
+offset_right = 820.0
+offset_bottom = 360.0
+texture = ExtResource("1_4na8a")
+
+[node name="Player-run-4" type="Sprite2D" parent="."]
+position = Vector2(287, 305)
+texture = ExtResource("2_6ws42")
+
+[node name="Crab-walk-1" type="Sprite2D" parent="."]
+position = Vector2(488, 311)
+texture = ExtResource("3_r6m4e")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_gruau")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CONTINUE
+"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MAIN MENU"
