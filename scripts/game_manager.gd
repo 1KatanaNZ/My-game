@@ -9,6 +9,10 @@ func _ready():
 func start_game():
 	transition_to_scene(level_1.resource_path)
 
+func exit_game():
+	get_tree().quit()
+
+
 
 func transition_to_scene(scene_path):
 	await get_tree().create_timer(0.5).timeout

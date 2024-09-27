@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://dqquk6hj37fjl"]
+[gd_scene load_steps=5 format=4 uid="uid://dqquk6hj37fjl"]
 
 [ext_resource type="PackedScene" uid="uid://djb8yp7ywku2n" path="res://levels/base_level.tscn" id="1_4ulij"]
 [ext_resource type="PackedScene" uid="uid://bejkvn7l5qt0n" path="res://background/parallax_background.tscn" id="2_h1d6t"]
 [ext_resource type="PackedScene" uid="uid://c3umxx13kij55" path="res://levels/audio_stream_player.tscn" id="3_unbqs"]
+[ext_resource type="PackedScene" uid="uid://dxw37qj8ia073" path="res://enemy/crab.tscn" id="4_rp72a"]
 
 [node name="Level 1" instance=ExtResource("1_4ulij")]
 
@@ -30,3 +31,9 @@ editor_draw_limits = true
 
 [node name="AudioStreamPlayer" parent="." index="3" instance=ExtResource("3_unbqs")]
 volume_db = -13.388
+
+[node name="Crab" parent="." index="4" instance=ExtResource("4_rp72a")]
+position = Vector2(408, -64)
+
+[node name="Crab2" parent="." index="5" instance=ExtResource("4_rp72a")]
+position = Vector2(280, -161)

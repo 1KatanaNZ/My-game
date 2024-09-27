@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var GameManager
+
 
 func _on_play_pressed():
 	GameManager.start_game()
