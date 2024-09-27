@@ -20,13 +20,13 @@ layer_2/tile_data = PackedInt32Array(-196631, 65536, 6, -131095, 65536, 7, -6555
 tile_map_data = PackedByteArray("AAAbAPj/AAAQAAEAAAAcAPj/AAARAAEAAAAdAPj/AAASAAEAAAAgAPr/AAAMAAEAAAAhAPr/AAANAAEAAAAiAPr/AAAOAAEAAAA=")
 
 [node name="player" parent="." index="2"]
-position = Vector2(-384, -48)
+position = Vector2(12, -48)
 
 [node name="Camera2D" parent="player" index="2"]
 limit_left = 0
 limit_top = -271
-limit_right = 1200
-limit_bottom = -10000
+limit_right = 1700
+limit_bottom = -70000
 editor_draw_limits = true
 
 [node name="AudioStreamPlayer" parent="." index="3" instance=ExtResource("3_unbqs")]

@@ -1,10 +1,15 @@
-[gd_scene load_steps=38 format=3 uid="uid://cc2mncxhn2fgr"]
+[gd_scene load_steps=40 format=3 uid="uid://cc2mncxhn2fgr"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_8dhxo"]
 [ext_resource type="Texture2D" uid="uid://dgd22hmh40lai" path="res://player/player/player-idle.png" id="1_ukx7s"]
 [ext_resource type="Texture2D" uid="uid://c80vyc6s10a6m" path="res://player/player/player-run.png" id="2_b82vv"]
+[ext_resource type="Texture2D" uid="uid://dxng0b13tpj85" path="res://player/player/player-duck.png" id="2_w17f1"]
 [ext_resource type="Texture2D" uid="uid://b8vna1nppl4lv" path="res://player/player/player-jump.png" id="3_3f2yy"]
 [ext_resource type="Texture2D" uid="uid://csej4xlyj12wm" path="res://player/player/player-run-shoot.png" id="5_atd08"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd3f6"]
+atlas = ExtResource("2_w17f1")
+region = Rect2(0, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4bs8f"]
 atlas = ExtResource("1_ukx7s")
@@ -128,6 +133,14 @@ region = Rect2(720, 0, 80, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_edifq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd3f6")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"default",
@@ -255,10 +268,8 @@ script = ExtResource("1_8dhxo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_edifq")
-animation = &"run_shoot"
+animation = &"crouch"
 autoplay = "idle"
-frame = 8
-frame_progress = 0.672391
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

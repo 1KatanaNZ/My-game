@@ -7,4 +7,4 @@ func _on_play_pressed():
 	queue_free()
 
 func _on_exit_pressed() -> void:
-	pass # Replace with function body.
+	GameManager.exit_game()

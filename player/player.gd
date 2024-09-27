@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 # Constants (implicitly statically typed)
 const GRAVITY: int = 1000  # Increased gravity for a stronger pull down
-const SPEED: int = 300
+const SPEED: int = 250
 const JUMP: int = -300  # Adjusted jump strength
 const JUMP_HORIZONTAL: int = 100
 
