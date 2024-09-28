@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5a4fydku57w4"]
+[gd_scene load_steps=6 format=3 uid="uid://b5a4fydku57w4"]
 
 [ext_resource type="Texture2D" uid="uid://dhpqgfbhrthi4" path="res://levels/enemies/shot.png" id="1_nmf81"]
+[ext_resource type="Script" path="res://bullet/bullet.gd" id="2_6pnox"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kdk1c"]
 atlas = ExtResource("1_nmf81")
@@ -27,4 +28,13 @@ animations = [{
 [node name="Bullet" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_3abyu")
 animation = &"shot"
-frame_progress = 0.688108
+frame = 1
+frame_progress = 0.76189
+script = ExtResource("2_6pnox")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -268,10 +268,14 @@ script = ExtResource("1_8dhxo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_edifq")
-animation = &"crouch"
+animation = &"run_shoot"
 autoplay = "idle"
+frame = 8
+frame_progress = 0.372956
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -20)
 shape = SubResource("CapsuleShape2D_a4rn7")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(18, -26)

@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+var bullet = preload("res://bullet/bullet.tscn")
+
 # Statically typed variable
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var muzzle : Marker2D = $Muzzle
 # Constants (implicitly statically typed)
 const GRAVITY: int = 1000  # Increased gravity for a stronger pull down
 const SPEED: int = 250
@@ -14,7 +16,7 @@ enum State {Idle, Run, Jump, Shoot}
 
 # Dynamically typed variable
 var current_state = State.Idle
-
+var muzzle_position
 func _ready():
 	# Dynamically typed variable
 	var player_name = "Soldier"
@@ -22,9 +24,11 @@ func _ready():
 
 	# Statically typed assignment
 	current_state = State.Idle
-
+	muzzle_position = muzzle.position
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
+	
+	player_muzzle_postion()
 	player_shooting(delta)
 	player_run(delta)
 	player_jump(delta)
@@ -64,7 +68,20 @@ func player_shooting(delta : float):
 	var direction: float = Input.get_axis("move_left", "move_right")
 	
 	if direction != 0 and Input.is_action_just_pressed("shoot"):
+		var bullet_instance = bullet.instantiate() as Node2D
+		bullet_instance.direction = direction
+		bullet_instance.global_position = muzzle.global_position
+		get_parent().add_child(bullet_instance)
 		current_state = State.Shoot
+
+
+func player_muzzle_postion():
+	var direction: float = Input.get_axis("move_left", "move_right")
+	
+	if direction > 0:
+		muzzle.position.x = muzzle_position.x
+	elif direction < 0:
+		muzzle.position.x = -muzzle_position.x
 
 
 
@@ -81,10 +98,10 @@ func determine_state() -> void:
 
 
 
-func player_animations() -> void:
+func player_animations():
 	if current_state == State.Idle:
 		animated_sprite_2d.play("idle")
-	elif current_state == State.Run:
+	elif current_state == State.Run and animated_sprite_2d.animation != "run_shoot":
 		animated_sprite_2d.play("run")
 	elif current_state == State.Jump:
 		animated_sprite_2d.play("jump")
