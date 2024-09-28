@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Galactic Conquest"
-run/main_scene="res://levels/MainMenu.tscn"
+run/main_scene="res://ui/main menu/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+HealthManager="*res://scripts/health_manager.gd"
 
 [display]
 
@@ -62,6 +63,7 @@ shoot={
 
 2d_physics/layer_1="Ground"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
 
 [rendering]
 

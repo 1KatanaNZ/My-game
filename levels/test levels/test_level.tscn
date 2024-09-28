@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://chinlvfif30lo"]
+[gd_scene load_steps=6 format=4 uid="uid://chinlvfif30lo"]
 
 [ext_resource type="PackedScene" uid="uid://djb8yp7ywku2n" path="res://levels/base_level.tscn" id="1_nvs4f"]
 [ext_resource type="PackedScene" uid="uid://bejkvn7l5qt0n" path="res://background/parallax_background.tscn" id="2_lblmo"]
 [ext_resource type="PackedScene" uid="uid://dxw37qj8ia073" path="res://enemy/crab.tscn" id="3_05vk5"]
 [ext_resource type="PackedScene" uid="uid://c3umxx13kij55" path="res://levels/audio_stream_player.tscn" id="4_6nogr"]
+[ext_resource type="PackedScene" uid="uid://bphejixpt2aq7" path="res://ui/game_screen.tscn" id="5_r5w74"]
 
 [node name="TestLevel" instance=ExtResource("1_nvs4f")]
 
@@ -23,3 +24,5 @@ slide_on_ceiling = false
 
 [node name="AudioStreamPlayer" parent="." index="4" instance=ExtResource("4_6nogr")]
 volume_db = -32.578
+
+[node name="GameScreen" parent="." index="5" instance=ExtResource("5_r5w74")]

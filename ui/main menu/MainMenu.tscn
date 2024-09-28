@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvig2lessn30a"]
 
 [ext_resource type="Texture2D" uid="uid://cjo4627xyp0v4" path="res://warped cave sprites/PNG/environment/environment-preview.png" id="1_pv60d"]
-[ext_resource type="Script" path="res://levels/main_menu.gd" id="1_v8mch"]
+[ext_resource type="Script" path="res://ui/main menu/main_menu.gd" id="1_v8mch"]
 [ext_resource type="Texture2D" uid="uid://dnlfsk1dkhhq3" path="res://warped cave sprites/PNG/sprites/player/player-run/player-run-4.png" id="2_wsiuq"]
 [ext_resource type="Texture2D" uid="uid://x34mti3l54lb" path="res://warped cave sprites/PNG/sprites/enemies/crab-walk/crab-walk-1.png" id="3_n3w57"]
 [ext_resource type="Theme" uid="uid://br3ugn4xm4r8i" path="res://theme/new_theme.tres" id="4_mt4b5"]
@@ -60,6 +60,7 @@ text = "EXIT"
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("6_o58o7")]
 stream = ExtResource("7_ovx5u")
 volume_db = -13.388
+parameters/looping = true
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

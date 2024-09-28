@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxw37qj8ia073"]
+[gd_scene load_steps=15 format=3 uid="uid://dxw37qj8ia073"]
 
 [ext_resource type="Texture2D" uid="uid://c8veakerx0lyf" path="res://levels/enemies/crab-idle.png" id="1_mrt65"]
 [ext_resource type="Script" path="res://enemy/crab.gd" id="1_wj4lc"]
 [ext_resource type="Texture2D" uid="uid://ry5lard3v3bn" path="res://levels/enemies/crab-walk.png" id="2_iu5cq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_px7oi"]
+radius = 12.0416
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpowb"]
 atlas = ExtResource("1_mrt65")
@@ -75,10 +76,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Crab" type="Area2D" groups=["Hurt"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uxoji"]
+radius = 13.0384
+
+[node name="Crab" type="Area2D" groups=["Enemy", "Hurt"]]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_wj4lc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_px7oi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -90,4 +97,14 @@ frame_progress = 0.379986
 [node name="Timer" type="Timer" parent="." groups=["Hurt"]]
 autostart = true
 
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_uxoji")
+debug_color = Color(0.851399, 0.251262, 0.687809, 0.42)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
