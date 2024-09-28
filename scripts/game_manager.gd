@@ -1,5 +1,5 @@
 extends Node
-
+# THIS IS TO PRELOAD THE SCENES THAT THAT MY BUTTONS WORK
 var MAIN_MENU = preload("res://ui/main menu/MainMenu.tscn")
 var pause_menu = preload("res://ui/pause menu/PauseMenu.tscn")
 var level_1 = preload("res://levels/level_1.tscn")
@@ -37,5 +37,5 @@ func main_menu():
 
 
 func transition_to_scene(scene_path):
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file(scene_path)
