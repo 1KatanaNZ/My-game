@@ -262,7 +262,6 @@ radius = 9.0
 height = 40.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4necu"]
-radius = 16.0
 height = 38.0
 
 [node name="player" type="CharacterBody2D"]
@@ -272,11 +271,11 @@ script = ExtResource("1_8dhxo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_edifq")
-animation = &"run_shoot"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -22)
 shape = SubResource("CapsuleShape2D_a4rn7")
 
 [node name="Muzzle" type="Marker2D" parent="."]
@@ -287,7 +286,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="HurtboxCollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -20)
+position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_4necu")
 debug_color = Color(0.901389, 0.172192, 0.63958, 0.42)
 

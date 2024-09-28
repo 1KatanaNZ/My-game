@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvig2lessn30a"]
+[gd_scene load_steps=10 format=3 uid="uid://dvig2lessn30a"]
 
 [ext_resource type="Texture2D" uid="uid://cjo4627xyp0v4" path="res://warped cave sprites/PNG/environment/environment-preview.png" id="1_pv60d"]
 [ext_resource type="Script" path="res://ui/main menu/main_menu.gd" id="1_v8mch"]
-[ext_resource type="Texture2D" uid="uid://dnlfsk1dkhhq3" path="res://warped cave sprites/PNG/sprites/player/player-run/player-run-4.png" id="2_wsiuq"]
 [ext_resource type="Texture2D" uid="uid://x34mti3l54lb" path="res://warped cave sprites/PNG/sprites/enemies/crab-walk/crab-walk-1.png" id="3_n3w57"]
 [ext_resource type="Theme" uid="uid://br3ugn4xm4r8i" path="res://theme/new_theme.tres" id="4_mt4b5"]
 [ext_resource type="PackedScene" uid="uid://c3umxx13kij55" path="res://levels/audio_stream_player.tscn" id="6_o58o7"]
 [ext_resource type="AudioStream" uid="uid://cywobwxnoitja" path="res://levels/Sonic.EYX OST - Crystal Lake Zone (Extended For 20 Mins) - LteamProductions126.mp3" id="7_ovx5u"]
+[ext_resource type="Texture2D" uid="uid://dfkpora1ool73" path="res://warped cave sprites/PNG/sprites/player/player-run-shot/player-run-shot-4.png" id="7_svtjx"]
+[ext_resource type="Texture2D" uid="uid://o50v1d5oyhhj" path="res://warped cave sprites/PNG/sprites/Fx/shot/shot-1.png" id="8_sms87"]
+[ext_resource type="Texture2D" uid="uid://da8b6iamfuddk" path="res://warped cave sprites/PNG/sprites/Fx/shot/shot-2.png" id="9_vo3iy"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_v8mch")
@@ -17,10 +19,6 @@ offset_right = 820.0
 offset_bottom = 360.0
 texture = ExtResource("1_pv60d")
 
-[node name="Player-run-4" type="Sprite2D" parent="."]
-position = Vector2(287, 305)
-texture = ExtResource("2_wsiuq")
-
 [node name="Crab-walk-1" type="Sprite2D" parent="."]
 position = Vector2(488, 311)
 texture = ExtResource("3_n3w57")
@@ -29,6 +27,10 @@ texture = ExtResource("3_n3w57")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -7.0
+offset_right = 12.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_mt4b5")
@@ -61,6 +63,18 @@ text = "EXIT"
 stream = ExtResource("7_ovx5u")
 volume_db = -13.388
 parameters/looping = true
+
+[node name="Player-run-shot-4" type="Sprite2D" parent="."]
+position = Vector2(287, 304)
+texture = ExtResource("7_svtjx")
+
+[node name="Shot-1" type="Sprite2D" parent="."]
+position = Vector2(369, 303)
+texture = ExtResource("8_sms87")
+
+[node name="Shot-2" type="Sprite2D" parent="."]
+position = Vector2(369, 303)
+texture = ExtResource("9_vo3iy")
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

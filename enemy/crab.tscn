@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ry5lard3v3bn" path="res://levels/enemies/crab-walk.png" id="2_iu5cq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_px7oi"]
-radius = 12.0416
+radius = 13.0384
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpowb"]
 atlas = ExtResource("1_mrt65")
@@ -77,7 +77,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uxoji"]
-radius = 13.0384
+radius = 11.4018
 
 [node name="Crab" type="Area2D" groups=["Enemy", "Hurt"]]
 collision_layer = 4
@@ -85,14 +85,12 @@ collision_mask = 3
 script = ExtResource("1_wj4lc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_px7oi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w7ee3")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.379986
 
 [node name="Timer" type="Timer" parent="." groups=["Hurt"]]
 autostart = true
@@ -102,7 +100,6 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_uxoji")
 debug_color = Color(0.851399, 0.251262, 0.687809, 0.42)
 
