@@ -1,12 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bphejixpt2aq7"]
+[gd_scene load_steps=6 format=3 uid="uid://bphejixpt2aq7"]
 
 [ext_resource type="PackedScene" uid="uid://bwfv0j3gfrh34" path="res://ui/health bar/health_bar.tscn" id="1_t5llf"]
+[ext_resource type="Script" path="res://ui/game_screen.gd" id="1_wnouy"]
 [ext_resource type="Texture2D" uid="uid://c6chd6ancttqd" path="res://ui/health bar/heart_1.png" id="2_lggxd"]
 [ext_resource type="Texture2D" uid="uid://dpmgwe12l8006" path="res://ui/health bar/heart_0.png" id="3_hu525"]
+[ext_resource type="Texture2D" uid="uid://n51k8ts2i8y4" path="res://ui/icons8-pause-12.png" id="5_abtph"]
 
 [node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_wnouy")
 
 [node name="HealthBar" parent="." instance=ExtResource("1_t5llf")]
 position = Vector2(10, 10)
 heart1 = ExtResource("2_lggxd")
 heart0 = ExtResource("3_hu525")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -21.0
+offset_top = 4.0
+offset_right = -9.0
+offset_bottom = 16.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("5_abtph")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

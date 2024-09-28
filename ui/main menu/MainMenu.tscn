@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://da8b6iamfuddk" path="res://warped cave sprites/PNG/sprites/Fx/shot/shot-2.png" id="9_vo3iy"]
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
 script = ExtResource("1_v8mch")
 
 [node name="TextureRect" type="TextureRect" parent="."]
